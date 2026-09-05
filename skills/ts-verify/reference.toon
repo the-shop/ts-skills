@@ -1,0 +1,18 @@
+skill: "ts-verify"
+version: "0.1.0"
+purpose: "Make completion claims no stronger than fresh evidence."
+contract:
+  scope: "Follow the user's requested outcome and existing authorization. Diagnosis, review, and planning do not authorize edits, commits, messages, or publication. An implementation request authorizes its ordinary in-scope steps; do not repeatedly ask for approval already given."
+  evidence: "Separate observed facts, hypotheses, proposals, applied changes, and unverified results. Attach commands with relevant output or precise file/data references to material claims. Only describe a check as run or passing if it actually ran with that result. Label inferred outcomes as predictions. Never invent a run, silently weaken a check, or treat remembered results as fresh."
+  composition: "Read the full reference of every explicitly requested skill before applying the combined workflow; overlapping duties do not make a requested reference optional. Combine relevant obligations into one concise response and record shared evidence once. Honor explicit length limits by selecting the material findings and compact evidence. No fixed headings, tables, quotas, or repeated status sections are required. Preserve the user's requested response format; TOON is the instruction format, not a mandatory answer format."
+  unavailable: "Use equivalent capabilities offered by the current harness and operating system. If a necessary tool, reference, permission, or input is missing, state the specific limit and continue independent authorized work. Do not claim completion of the blocked part."
+steps[6]{step,action,evidence}:
+  "claim","Identify exactly what is being claimed complete and choose the check that measures that outcome.","A build checks compilation. For changed integration behavior, exercise and name the real reachable endpoint, UI flow, or data path; mocked unit tests alone do not establish that it is wired correctly. If unavailable, mark that behavior unverified."
+  "run","Run the relevant validation after the last change affecting that result. Reuse still-valid evidence for untouched areas.","Report the command or action and the relevant observed result; do not repeat unrelated suites without cause."
+  "compare","Inspect failures as reported. Never weaken assertions, skip failing cases, or change acceptance criteria merely to obtain a pass.","Separate product failures, unavailable environments, and test setup defects."
+  "reuse","For new logic, check nearby implementations and actual call sites for duplication or inconsistent behavior.","Reuse an existing canonical implementation when it fits the authorized scope."
+  "state","Distinguish applied changes, attempted changes, proposals, and unverified work.","Use complete, partial, blocked, or applied-but-unverified accurately; these labels are not mandatory headings."
+  "close","Explain what changed, why, what was checked, and any remaining limitation or necessary next action.","One concise combined response may satisfy this skill and other active skills."
+completion:
+  done: "The outcome claim matches fresh relevant evidence, and material limitations are explicit."
+  limits: "For an explanation or diagnosis, verify the factual claims without introducing an implementation requirement. Missing access to a required runtime must be reported rather than disguised as a passing check."

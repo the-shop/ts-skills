@@ -1,0 +1,18 @@
+skill: "ts-handoff"
+version: "0.1.0"
+purpose: "Transfer enough verified state for a successor to resume safely without repeating the investigation."
+contract:
+  scope: "Follow the user's requested outcome and existing authorization. Diagnosis, review, and planning do not authorize edits, commits, messages, or publication. An implementation request authorizes its ordinary in-scope steps; do not repeatedly ask for approval already given."
+  evidence: "Separate observed facts, hypotheses, proposals, applied changes, and unverified results. Attach commands with relevant output or precise file/data references to material claims. Only describe a check as run or passing if it actually ran with that result. Label inferred outcomes as predictions. Never invent a run, silently weaken a check, or treat remembered results as fresh."
+  composition: "Read the full reference of every explicitly requested skill before applying the combined workflow; overlapping duties do not make a requested reference optional. Combine relevant obligations into one concise response and record shared evidence once. Honor explicit length limits by selecting the material findings and compact evidence. No fixed headings, tables, quotas, or repeated status sections are required. Preserve the user's requested response format; TOON is the instruction format, not a mandatory answer format."
+  unavailable: "Use equivalent capabilities offered by the current harness and operating system. If a necessary tool, reference, permission, or input is missing, state the specific limit and continue independent authorized work. Do not claim completion of the blocked part."
+steps[6]{step,action,evidence}:
+  "state","Record the current state with the commands, outputs, file references, and time or revision that established it.","Evidence has a scope and age; the successor should recheck state that may have changed."
+  "separate","Distinguish completed and verified work from applied but unverified changes, proposals, and remaining work.","Do not hide a failing check behind a summary such as mostly done."
+  "resume","Give the next concrete action with the applicable working directory and arguments.","Use paths valid for the recipient's checkout; explain any environment-dependent substitution rather than inventing a universal absolute path."
+  "traps","Record consequential dead ends, duplicate implementations, environment issues, and successful workarounds.","Include only details that prevent likely repeated work or mistakes."
+  "questions","Attach a resolving check or needed decision to each material unknown.","A missing tool or permission is a limitation, not evidence of product behavior."
+  "deliver","Write one coherent handoff suited to the requested channel or artifact.","Do not send messages or publish notes unless the user authorized that destination."
+completion:
+  done: "A successor can identify the state, evidence, outstanding work, next action, and stale assumptions without needing the prior conversation."
+  limits: "A handoff does not make old observations permanently true and does not require a particular heading layout."

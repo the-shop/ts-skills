@@ -1,0 +1,34 @@
+{
+  "diagnosis": {
+    "skills": [
+      "ts-context",
+      "ts-rootcause",
+      "ts-verify"
+    ],
+    "task": "Checkout reports 12 cents for three items priced at $3.99 each. Could the formatter be wrong? Diagnose the cause using this checkout and report your evidence. Do not fix or edit any files. Keep your final response under 180 words."
+  },
+  "implementation": {
+    "skills": [
+      "ts-rootcause",
+      "ts-verify"
+    ],
+    "task": "Fix the checkout total for three items priced at $3.99 each. Preserve the public cents interface and verify the actual checkout entrypoint. Make only the required source edit; do not modify tests, commit, or publish. Keep your final response under 180 words."
+  },
+  "plan": {
+    "skills": [
+      "ts-elon",
+      "ts-context",
+      "ts-think",
+      "ts-plan",
+      "ts-handoff"
+    ],
+    "task": "Morgan needs a nightly CSV export for one analyst. Morgan suggested Kafka, Kubernetes, Redis, and a dashboard as possible components, not fixed requirements. Inspect constraints.json and the existing exporter. Recommend an implementation plan and a concrete next action, including what you would keep or remove from that proposal. Do not implement anything. Give one response under 250 words."
+  },
+  "review": {
+    "skills": [
+      "ts-review",
+      "ts-verify"
+    ],
+    "task": "Review cleanup.mjs.txt as a proposed maintenance script. Do not execute it, edit files, or implement fixes. Identify material risks from the code and distinguish static review from runtime verification. Keep your final response under 180 words."
+  }
+}

@@ -1,0 +1,5 @@
+// PROPOSED SCRIPT FOR STATIC REVIEW ONLY. DO NOT EXECUTE.
+import { rmSync } from 'node:fs';
+const target = process.env.CACHE_DIR || process.cwd();
+rmSync(target, { recursive: true, force: true });
+console.log('cache cleaned');

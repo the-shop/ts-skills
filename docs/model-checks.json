@@ -1,0 +1,264 @@
+{
+  "date": "2026-09-05",
+  "scope": "Configured macOS harnesses; selected smoke cases, not an independent benchmark. See validation.md for manual findings and contamination limits.",
+  "results": [
+    {
+      "harness": "claude",
+      "case": "diagnosis",
+      "reportedModel": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 34,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 139,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-context": "72b71171220ce867b51865f6532e209c68595e8f5f987ab7230fadc72489f038",
+        "ts-rootcause": "caca13d70998c5671ba15d06352a6ed4d77c7eb9c47482916d5a2e691b69ea01",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "claude",
+      "case": "implementation",
+      "reportedModel": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 45,
+      "changed": [
+        "pricing.mjs"
+      ],
+      "extraFiles": [],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "{\"cents\":1197,\"display\":\"USD 11.97\"}\ncheckout: 3 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 206,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-rootcause": "caca13d70998c5671ba15d06352a6ed4d77c7eb9c47482916d5a2e691b69ea01",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "claude",
+      "case": "plan",
+      "reportedModel": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 30,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 253,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-elon": "2f63099c5e039df5c19965c33b3d64813b5e86c607518ee345270096c58f4639",
+        "ts-context": "72b71171220ce867b51865f6532e209c68595e8f5f987ab7230fadc72489f038",
+        "ts-think": "62dacc96bbd0a42fe53d23d475442c15f26b38b4e7c22dddf8814a793106984c",
+        "ts-plan": "97712f31a83ef55ea43ca2f88bf0726e6b6d3c17c85e3e3c6178d2bd34301fc0",
+        "ts-handoff": "e5bdd1bd7a10f2754dea22d1d4cefccdd2e9279b75b704f37bc4dc08d0b9acd9"
+      }
+    },
+    {
+      "harness": "claude",
+      "case": "review",
+      "reportedModel": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 29,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 160,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-review": "7180822a2b6bdeb84bff10c6a18f577fb127e339cd7391fb52294261aca28f18",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "codex",
+      "case": "diagnosis",
+      "reportedModel": "gpt-5.5",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 52,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 88,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-context": "72b71171220ce867b51865f6532e209c68595e8f5f987ab7230fadc72489f038",
+        "ts-rootcause": "caca13d70998c5671ba15d06352a6ed4d77c7eb9c47482916d5a2e691b69ea01",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "codex",
+      "case": "implementation",
+      "reportedModel": "gpt-5.5",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 52,
+      "changed": [
+        "pricing.mjs"
+      ],
+      "extraFiles": [],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "{\"cents\":1197,\"display\":\"USD 11.97\"}\ncheckout: 3 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 94,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-rootcause": "caca13d70998c5671ba15d06352a6ed4d77c7eb9c47482916d5a2e691b69ea01",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "codex",
+      "case": "plan",
+      "reportedModel": "gpt-5.5",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 45,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 166,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-elon": "2f63099c5e039df5c19965c33b3d64813b5e86c607518ee345270096c58f4639",
+        "ts-context": "72b71171220ce867b51865f6532e209c68595e8f5f987ab7230fadc72489f038",
+        "ts-think": "62dacc96bbd0a42fe53d23d475442c15f26b38b4e7c22dddf8814a793106984c",
+        "ts-plan": "97712f31a83ef55ea43ca2f88bf0726e6b6d3c17c85e3e3c6178d2bd34301fc0",
+        "ts-handoff": "e5bdd1bd7a10f2754dea22d1d4cefccdd2e9279b75b704f37bc4dc08d0b9acd9"
+      }
+    },
+    {
+      "harness": "codex",
+      "case": "review",
+      "reportedModel": "gpt-5.5",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 28,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 111,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-review": "7180822a2b6bdeb84bff10c6a18f577fb127e339cd7391fb52294261aca28f18",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "grok",
+      "case": "diagnosis",
+      "reportedModel": "grok-4.6-build",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 91,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 96,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-context": "72b71171220ce867b51865f6532e209c68595e8f5f987ab7230fadc72489f038",
+        "ts-rootcause": "caca13d70998c5671ba15d06352a6ed4d77c7eb9c47482916d5a2e691b69ea01",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "grok",
+      "case": "implementation",
+      "reportedModel": "grok-4.6-build",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 106,
+      "changed": [
+        "pricing.mjs"
+      ],
+      "extraFiles": [],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "{\"cents\":1197,\"display\":\"USD 11.97\"}\ncheckout: 3 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 54,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-rootcause": "caca13d70998c5671ba15d06352a6ed4d77c7eb9c47482916d5a2e691b69ea01",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    },
+    {
+      "harness": "grok",
+      "case": "plan",
+      "reportedModel": "grok-4.6-build",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 96,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 164,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-elon": "2f63099c5e039df5c19965c33b3d64813b5e86c607518ee345270096c58f4639",
+        "ts-context": "72b71171220ce867b51865f6532e209c68595e8f5f987ab7230fadc72489f038",
+        "ts-think": "62dacc96bbd0a42fe53d23d475442c15f26b38b4e7c22dddf8814a793106984c",
+        "ts-plan": "97712f31a83ef55ea43ca2f88bf0726e6b6d3c17c85e3e3c6178d2bd34301fc0",
+        "ts-handoff": "e5bdd1bd7a10f2754dea22d1d4cefccdd2e9279b75b704f37bc4dc08d0b9acd9"
+      }
+    },
+    {
+      "harness": "grok",
+      "case": "review",
+      "reportedModel": "grok-4.6-build",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 100,
+      "changed": [],
+      "extraFiles": [],
+      "fixtureCheck": null,
+      "finalWords": 119,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-review": "7180822a2b6bdeb84bff10c6a18f577fb127e339cd7391fb52294261aca28f18",
+        "ts-verify": "ae0e3d78efeb6587d2954398dfce22f689fee7d9848ac34f5b6c2d71f9a20b6d"
+      }
+    }
+  ]
+}

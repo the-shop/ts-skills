@@ -1,0 +1,20 @@
+{
+  "name": "@the-shop/ts-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable engineering discipline skills with compact TOON references.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test",
+    "check": "npm run validate && npm test"
+  },
+  "devDependencies": {
+    "@toon-format/toon": "4.1.1",
+    "yaml": "2.9.0"
+  }
+}

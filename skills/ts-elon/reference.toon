@@ -1,0 +1,18 @@
+skill: "ts-elon"
+version: "0.1.0"
+purpose: "Question requirements, try deletion, simplify survivors, accelerate, then automate."
+contract:
+  scope: "Follow the user's requested outcome and existing authorization. Diagnosis, review, and planning do not authorize edits, commits, messages, or publication. An implementation request authorizes its ordinary in-scope steps; do not repeatedly ask for approval already given."
+  evidence: "Separate observed facts, hypotheses, proposals, applied changes, and unverified results. Attach commands with relevant output or precise file/data references to material claims. Only describe a check as run or passing if it actually ran with that result. Label inferred outcomes as predictions. Never invent a run, silently weaken a check, or treat remembered results as fresh."
+  composition: "Read the full reference of every explicitly requested skill before applying the combined workflow; overlapping duties do not make a requested reference optional. Combine relevant obligations into one concise response and record shared evidence once. Honor explicit length limits by selecting the material findings and compact evidence. No fixed headings, tables, quotas, or repeated status sections are required. Preserve the user's requested response format; TOON is the instruction format, not a mandatory answer format."
+  unavailable: "Use equivalent capabilities offered by the current harness and operating system. If a necessary tool, reference, permission, or input is missing, state the specific limit and continue independent authorized work. Do not claim completion of the blocked part."
+steps[6]{step,action,evidence}:
+  "question","List the meaningful requirements and identify the human owner when known. Mark unknown owners explicitly; do not invent names or block ordinary work just to fill a field.","Ask what breaks if each requirement is removed and what evidence supports keeping it."
+  "delete","Attempt to remove unnecessary steps, components, or assumptions before optimizing them. Propose dropping an explicit user requirement rather than silently deleting it.","Keep necessary safeguards and requested outcomes. Deletion is an experiment, not a numerical quota."
+  "simplify","Simplify only the parts that survived the requirement and deletion checks.","Prefer the smallest implementation that meets the accepted scope."
+  "accelerate","Improve the cycle time of the remaining work only after its purpose is justified.","Record the actual bottleneck or state that pruning was sufficient."
+  "automate","Automate only the surviving stable process when automation belongs to the user's requested scope.","Do not build an automation system for an advisory request or a one-off step without need."
+  "scope","Execute the accepted scope when implementation is requested. Report proposed additions or removals separately.","Preserve the five-step order; the final explanation may be concise and combined with other skills."
+completion:
+  done: "The retained requirements, deletion decisions, simplified scope, and appropriate next action are supported by evidence."
+  limits: "No forced ten-percent deletion or add-back target. Unknown ownership invites investigation but is not automatic permission to discard a requirement. The historical name does not imply endorsement or affiliation."

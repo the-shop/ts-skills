@@ -1,0 +1,18 @@
+{
+  "owner": "Morgan",
+  "consumers": 1,
+  "rowsPerNight": 12,
+  "existingRuntime": "Node.js on one maintained server",
+  "scheduler": "existing operating-system scheduler",
+  "required": [
+    "nightly CSV",
+    "failure visible in existing logs"
+  ],
+  "infrastructureProposal": [
+    "Kafka",
+    "Kubernetes",
+    "Redis",
+    "dashboard"
+  ],
+  "proposalIsMandatory": false
+}

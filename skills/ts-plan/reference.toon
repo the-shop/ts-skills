@@ -1,0 +1,17 @@
+skill: "ts-plan"
+version: "0.1.0"
+purpose: "Produce the smallest executable plan consistent with verified reality."
+contract:
+  scope: "Follow the user's requested outcome and existing authorization. Diagnosis, review, and planning do not authorize edits, commits, messages, or publication. An implementation request authorizes its ordinary in-scope steps; do not repeatedly ask for approval already given."
+  evidence: "Separate observed facts, hypotheses, proposals, applied changes, and unverified results. Attach commands with relevant output or precise file/data references to material claims. Only describe a check as run or passing if it actually ran with that result. Label inferred outcomes as predictions. Never invent a run, silently weaken a check, or treat remembered results as fresh."
+  composition: "Read the full reference of every explicitly requested skill before applying the combined workflow; overlapping duties do not make a requested reference optional. Combine relevant obligations into one concise response and record shared evidence once. Honor explicit length limits by selecting the material findings and compact evidence. No fixed headings, tables, quotas, or repeated status sections are required. Preserve the user's requested response format; TOON is the instruction format, not a mandatory answer format."
+  unavailable: "Use equivalent capabilities offered by the current harness and operating system. If a necessary tool, reference, permission, or input is missing, state the specific limit and continue independent authorized work. Do not claim completion of the blocked part."
+steps[5]{step,action,evidence}:
+  "inspect","Read or query the real system before designing. Check whether the requested change is missing, partly implemented, or based on a false premise.","Name the observations that establish the current state."
+  "bound","State the requested outcome, observable completion condition, and scope. Challenge unsupported assumptions without dropping explicit requirements silently.","Separate required work from optional suggestions."
+  "sequence","Break the surviving work into independently verifiable steps. Prefer extending existing components over new abstractions.","Each step has an appropriate check and a concrete outcome."
+  "risks","Consider interfaces, concurrency, data changes, reversibility, and the likeliest failure. Resolve inexpensive choices using context.","Ask only when a missing decision materially changes scope or cannot safely be inferred."
+  "handover","Present the plan at the level of detail needed to execute it.","Include dependencies and remaining questions with the checks or decisions that resolve them."
+completion:
+  plan_only: "Planning is complete when the grounded plan and its verification steps are delivered. No implementation edits are required."
+  implementation: "When the user also requests implementation, finish planning and then execute the authorized plan; planning is not a reason to stop for redundant approval."
