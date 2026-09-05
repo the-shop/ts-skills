@@ -10,7 +10,9 @@ Tested on 2026-09-05 for v0.1.0. These are packaging and configured-harness smok
 - Skills CLI 1.5.23 discovered all eight skills and installed complete, byte-identical entrypoints and references for Claude Code, Codex, Grok, Hermes, Pi, and OpenCode in a temporary project. Codex and OpenCode share `.agents/skills`; the other four targets use symlinks.
 - Grok, Hermes, and Pi project directories had to exist before the installer created their symlinks. The initial attempt silently skipped those links; see the [installation caveat](compatibility.md).
 
-The repository's [CI workflow](https://github.com/the-shop/ts-skills/actions/workflows/validate.yml) runs the package suite on Ubuntu, macOS, and Windows with Node.js 20 and 22. Workflow status is recorded below after execution.
+The [first public CI run](https://github.com/the-shop/ts-skills/actions/runs/33956905224) passed all six jobs: Ubuntu, macOS, and Windows with Node.js 20 and 22. Each job passed the full 15-test suite. The [parent's pinned-submodule CI run](https://github.com/the-shop/ts-open-source/actions/runs/33956922315) also passed. Subsequent documentation-only release commits run the same checks; consult the [workflow history](https://github.com/the-shop/ts-skills/actions/workflows/validate.yml) for their statuses.
+
+The public GitHub source was also discovered successfully with `npx skills@1.5.23 add the-shop/ts-skills --list`: all eight skills were listed with their standard descriptions.
 
 ## Executed model checks
 
