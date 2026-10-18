@@ -7,7 +7,7 @@ npm ci --ignore-scripts
 npm run check
 ```
 
-These commands validate all eight entrypoints and their TOON references, then run Node's test runner. The development dependencies are pinned in `package-lock.json`. The installed skills themselves have no JavaScript dependency.
+These commands validate all eight entrypoints and their TOON references, then run Node's test runner. The development dependencies are pinned in `package-lock.json`. The installed skills themselves have no JavaScript dependency. The test runner also runs the `ts-handoff` merge script's Python suite in `test/python`, so maintainer checks need Python 3.8 or newer as `python3`, `python`, or `py`; a missing interpreter fails the check rather than skipping it.
 
 Checks cover supported metadata, skill identity, a 180-word entrypoint budget, strict TOON decoding and round trips, missing references, reference confinement, standalone relocation, paths containing spaces, Windows line endings, and local documentation links. Negative cases deliberately corrupt temporary copies and require rejection. Temporary files are removed by their owning tests.
 

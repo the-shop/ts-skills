@@ -1,6 +1,6 @@
 ---
 name: ts-handoff
-description: "Prepare resumable notes when handing work to another person or agent, saving progress, stopping mid-task, or continuing in a later session."
+description: "Prepare resumable notes when handing work to another person or agent, saving progress, stopping mid-task, or continuing in a later session. Carries keyed facts forward so a newer value replaces the older one."
 license: MIT
 metadata:
   author: the-shop
