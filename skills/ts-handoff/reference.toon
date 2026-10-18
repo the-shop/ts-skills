@@ -1,5 +1,5 @@
 skill: "ts-handoff"
-version: "0.1.0"
+version: "0.2.0"
 purpose: "Transfer enough verified state for a successor to resume safely without repeating the investigation."
 contract:
   scope: "Follow the user's requested outcome and existing authorization. Diagnosis, review, and planning do not authorize edits, commits, messages, or publication. An implementation request authorizes its ordinary in-scope steps; do not repeatedly ask for approval already given."

@@ -26,7 +26,7 @@ node scripts/smoke.mjs grok plan
 node scripts/smoke.mjs codex review YOUR_MODEL_ID
 ```
 
-`YOUR_MODEL_ID` is a placeholder for a model available to your account. Supported case names are `diagnosis`, `implementation`, `plan`, and `review`. The runner adapts CLI flags for Claude Code, Codex, and Grok; those clients and credentials are maintainer test prerequisites, not skill requirements. CLI flag support may change, so a startup failure is a harness-compatibility issue until investigated.
+`YOUR_MODEL_ID` is a placeholder for a model available to your account. Supported case names are `diagnosis`, `implementation`, `plan`, `review`, and `handoff`. The runner adapts CLI flags for Claude Code, Codex, and Grok; those clients and credentials are maintainer test prerequisites, not skill requirements. CLI flag support may change, so a startup failure is a harness-compatibility issue until investigated.
 
 | Case | Skills | Observable checks |
 | --- | --- | --- |
@@ -34,8 +34,9 @@ node scripts/smoke.mjs codex review YOUR_MODEL_ID
 | Implementation | rootcause, verify | Correct only the live pricing source; pass the checkout checks without changing tests. |
 | Plan | elon, context, think, plan, handoff | Inspect constraints; propose an appropriately small plan without implementation. |
 | Review | review, verify | Identify unsafe deletion from a text-only script sample; make no changes or execution claims. |
+| Handoff | handoff | Continue `handoff1.md` after one rule changes and one fact is retired; `check.mjs` requires one comma delimiter, no owner, old values only in the audit block, the request carried unchanged, and stamped facts. |
 
-Every run copies a fixture and selected skills to a new temporary workspace. It requests the actual entrypoints and references rather than injecting the full reference text. Checkout fixtures contain an intentionally unused correct implementation to test whether the agent traces the code that runs.
+Every run copies a fixture and selected skills to a new temporary workspace. It requests the actual entrypoints and references rather than injecting the full reference text. Checkout fixtures contain an intentionally unused correct implementation to test whether the agent traces the code that runs. The handoff case may also leave files whose names contain `draft`; any other new or changed top-level file fails it. Its check cannot see whether the agent ran `merge_facts.py`, so confirm that in the tool trace.
 
 A temporary workspace is not an operating-system security sandbox. Claude and Grok can execute tools with the invoking account's access; all clients inherit environment variables and credentials. The runner disables supported configuration sources where available, but global instructions, memory, or MCP integrations can remain active. Use an isolated account or container with only the intended provider credentials for an independent clean-room trial. Do not put secrets in fixtures.
 

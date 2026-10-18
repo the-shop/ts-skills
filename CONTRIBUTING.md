@@ -19,6 +19,6 @@ Describe the scope, validation, and remaining limitations in the pull request. D
 
 ## Release
 
-Use matching skill metadata and package versions. Publish the skill repository and tag its tested commit, then update the parent repository's `ts-skills` submodule to that commit. Validate a fresh recursive clone before tagging the parent release. See the [parent repository](https://github.com/the-shop/ts-open-source) for checkout and update commands.
+The package version is the release version. Set a skill's `metadata.version` and its `reference.toon` `version` to the release that last changed that skill, so unchanged skills keep the hashes their recorded evidence covers. Publish the skill repository and tag its tested commit, then update the parent repository's `ts-skills` submodule to that commit. Validate a fresh recursive clone before tagging the parent release. See the [parent repository](https://github.com/the-shop/ts-open-source) for checkout and update commands.
 
 Contributions are provided under this repository's [MIT license](LICENSE). Identify upstream sources and preserve applicable notices when adapting third-party material.

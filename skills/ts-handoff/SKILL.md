@@ -4,7 +4,7 @@ description: "Prepare resumable notes when handing work to another person or age
 license: MIT
 metadata:
   author: the-shop
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # ts-handoff

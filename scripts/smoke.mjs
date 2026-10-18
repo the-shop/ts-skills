@@ -9,15 +9,17 @@ import { root } from './validate.mjs';
 const [harness, caseName, model] = process.argv.slice(2);
 const scenarios = JSON.parse(readFileSync(path.join(root, 'test/scenarios.json'), 'utf8'));
 assert.ok(['claude', 'codex', 'grok'].includes(harness) && scenarios[caseName],
-  'Usage: node scripts/smoke.mjs <claude|codex|grok> <diagnosis|implementation|plan|review> [model]');
+  'Usage: node scripts/smoke.mjs <claude|codex|grok> <diagnosis|implementation|plan|review|handoff> [model]');
 const scenario = scenarios[caseName];
 const directory = mkdtempSync(path.join(tmpdir(), `ts-skills-${harness}-${caseName}-`));
 const work = path.join(directory, 'work');
 cpSync(path.join(root, 'fixtures', ['diagnosis', 'implementation'].includes(caseName) ? 'checkout' : caseName), work, { recursive: true });
 for (const name of scenario.skills) cpSync(path.join(root, 'skills', name), path.join(work, 'skills', name), { recursive: true });
-const skillHash = name => createHash('sha256')
-  .update(readFileSync(path.join(work, 'skills', name, 'SKILL.md')))
-  .update(readFileSync(path.join(work, 'skills', name, 'reference.toon'))).digest('hex');
+// SKILL.md, reference.toon, then any other skill files by name, so two-file skills keep their earlier hashes.
+const skillFiles = name => ['SKILL.md', 'reference.toon', ...readdirSync(path.join(work, 'skills', name), { withFileTypes: true })
+  .filter(e => e.isFile() && !['SKILL.md', 'reference.toon'].includes(e.name)).map(e => e.name).sort()];
+const skillHash = name => skillFiles(name).reduce((h, f) => h.update(readFileSync(path.join(work, 'skills', name, f))),
+  createHash('sha256')).digest('hex');
 const skillHashes = Object.fromEntries(scenario.skills.map(name => [name, skillHash(name)]));
 const snapshots = Object.fromEntries(readdirSync(work, { withFileTypes: true }).filter(e => e.isFile())
   .map(e => [e.name, readFileSync(path.join(work, e.name), 'utf8')]));
@@ -70,10 +72,13 @@ const changed = Object.keys(snapshots).filter(name => {
 });
 const extraFiles = readdirSync(work, { withFileTypes: true }).filter(e => e.isFile() && !(e.name in snapshots)).map(e => e.name);
 let fixtureCheck = null;
-if (caseName === 'implementation') fixtureCheck = spawnSync(process.execPath, ['check.mjs'], { cwd: work, encoding: 'utf8' });
+if (['implementation', 'handoff'].includes(caseName)) fixtureCheck = spawnSync(process.execPath, ['check.mjs'], { cwd: work, encoding: 'utf8' });
 const behavior = caseName === 'implementation'
   ? fixtureCheck.status === 0 && changed.length === 1 && changed[0] === 'pricing.mjs' && extraFiles.length === 0
-  : changed.length === 0 && extraFiles.length === 0;
+  : caseName === 'handoff'
+    ? fixtureCheck.status === 0 && changed.length === 0 && extraFiles.includes('handoff2.md')
+      && extraFiles.every(name => name === 'handoff2.md' || /draft/i.test(name))
+    : changed.length === 0 && extraFiles.length === 0;
 const skillsUnchanged = scenario.skills.every(name => {
   try { return skillHash(name) === skillHashes[name]; } catch { return false; }
 });

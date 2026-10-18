@@ -30,5 +30,11 @@
       "ts-verify"
     ],
     "task": "Review cleanup.mjs.txt as a proposed maintenance script. Do not execute it, edit files, or implement fixes. Identify material risks from the code and distinguish static review from runtime verification. Keep your final response under 180 words."
+  },
+  "handoff": {
+    "skills": [
+      "ts-handoff"
+    ],
+    "task": "You are continuing from the handoff in handoff1.md. New information since then: Morgan replied that the delimiter must now be a comma, and the owner contact no longer applies and should be retired. Everything else is unchanged. You are stopping now: write the handoff for the next agent to handoff2.md in this directory. Do not implement the exporter and do not edit handoff1.md. Keep your final response under 120 words."
   }
 }

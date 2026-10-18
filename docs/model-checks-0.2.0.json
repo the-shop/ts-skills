@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-18",
+  "release": "0.2.0",
+  "scope": "Configured macOS harnesses; the handoff smoke case only. The other seven skills are unchanged from 0.1.0 (same hashes), so their 0.1.0 checks in model-checks.json still apply. See validation.md for manual findings.",
+  "results": [
+    {
+      "harness": "claude",
+      "case": "handoff",
+      "reportedModel": "claude-opus-5-5",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 34,
+      "changed": [],
+      "extraFiles": [
+        "handoff2.md"
+      ],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "handoff: 10 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 124,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-handoff": "c6b5f3e56c11123704898209b91b1ed12fe585acc7862d6b77d739b85b2d75d7"
+      }
+    },
+    {
+      "harness": "claude",
+      "case": "handoff",
+      "reportedModel": "claude-sonnet-5-5",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 17,
+      "changed": [],
+      "extraFiles": [
+        "handoff2.md"
+      ],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "handoff: 10 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 117,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-handoff": "c6b5f3e56c11123704898209b91b1ed12fe585acc7862d6b77d739b85b2d75d7"
+      }
+    },
+    {
+      "harness": "claude",
+      "case": "handoff",
+      "reportedModel": "claude-haiku-4-5-20251001",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 31,
+      "changed": [],
+      "extraFiles": [
+        "handoff2.md"
+      ],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "handoff: 10 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 69,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-handoff": "c6b5f3e56c11123704898209b91b1ed12fe585acc7862d6b77d739b85b2d75d7"
+      }
+    },
+    {
+      "harness": "codex",
+      "case": "handoff",
+      "reportedModel": "harness-default",
+      "exit": 0,
+      "timedOut": false,
+      "elapsedSeconds": 30,
+      "changed": [],
+      "extraFiles": [
+        "handoff2.md"
+      ],
+      "fixtureCheck": {
+        "exit": 0,
+        "stdout": "handoff: 10 checks passed\n",
+        "stderr": ""
+      },
+      "finalWords": 36,
+      "mechanicalPass": true,
+      "humanReviewRequired": true,
+      "skillsUnchanged": true,
+      "skillHashes": {
+        "ts-handoff": "c6b5f3e56c11123704898209b91b1ed12fe585acc7862d6b77d739b85b2d75d7"
+      }
+    }
+  ]
+}
