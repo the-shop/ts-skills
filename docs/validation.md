@@ -12,7 +12,14 @@ v0.2.0 changes only `ts-handoff`. It adds keyed facts and the bundled `merge_fac
 - The Python suite also passed on Python 3.8, the oldest supported version.
 - Two regression tests, for a UTF-8 byte-order mark and for whitespace around the request delimiters, failed against the earlier script (2 failures) and pass now.
 - Skills CLI 1.5.23 installed `ts-handoff` for Claude Code from a local checkout. All three files arrived byte-identical, and no `__pycache__` was left behind.
-- The fixture check `fixtures/handoff/check.mjs` passed a correctly merged brief, including with a byte-order mark and CRLF line endings. It rejected a missing brief, a hand-edited brief with both delimiters active, and a brief that dropped the request.
+- The fixture check `fixtures/handoff/check.mjs` (12 checks) passed correctly merged briefs: with a byte-order mark and CRLF line endings, and with the comma written bare, quoted, or backticked. An independent review then built 20 briefs from a correct one. All 15 that are clearly wrong fail:
+  - a stale rule under a synonym key, or hidden inside another fact;
+  - the owner kept under a contact key;
+  - a stale fact bullet in the body;
+  - a wrong line count, or a request changed by one character;
+  - two FACTS blocks, an unterminated block, or a missing stamp.
+
+  Two values that restate the old rule (`comma (previously semicolon)`, `comma, not semicolon`) also fail, by design. The correct brief and its CRLF copy pass. One wrong brief also passes: it states the stale rule only in body prose, which no check reads.
 - CI ran Ubuntu, macOS, and Windows with Node.js 20 and 22; this is the first Windows execution of the script. See the [workflow history](https://github.com/the-shop/ts-skills/actions/workflows/validate.yml) for the release commit's run.
 
 ### Executed model checks
@@ -26,13 +33,16 @@ Each run used `node scripts/smoke.mjs <harness> handoff [model]` on a fresh fixt
 | Claude Code 2.1.291 / `claude-haiku-4-5-20251001` | yes | yes | 69 |
 | Codex CLI 0.162.1 / harness default | yes | yes | 36 |
 
-In every run `handoff2.md` passed all ten fixture checks:
+In every run `handoff2.md` passed all fixture checks:
 - exactly one delimiter key, valued comma;
-- no owner contact;
+- no stale value and no owner or contact key active;
+- no stale bullet in the body;
 - the old delimiter and owner only in the `SUPERSEDED` audit block;
 - page size and output directory kept;
 - the request carried unchanged;
 - every active fact stamped.
+
+The runs used a 10-check version of `check.mjs`. After the review tightened it to 12 checks, the four recorded `handoff2.md` files were re-checked and passed all 12. The models were not rerun.
 
 `handoff1.md` was unchanged, and no other top-level file remained.
 

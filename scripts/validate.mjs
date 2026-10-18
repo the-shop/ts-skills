@@ -44,7 +44,9 @@ export function validateSkill(directory) {
     assert.ok(typeof step[key] === 'string' && step[key].length, `missing step field: ${key}`);
   }
   assert.ok(data.completion && Object.values(data.completion).every(v => typeof v === 'string' && v.length));
-  assert.doesNotMatch(entry + reference, /\/Users\/|\/home\/[A-Za-z]|[A-Z]:\\Users\\|gbrain|ai-fleet|FLEET_/,
+  const bundled = readdirSync(directory, { withFileTypes: true }).filter(e => e.isFile())
+    .map(e => readFileSync(path.join(directory, e.name), 'utf8')).join('\n');
+  assert.doesNotMatch(bundled, /\/Users\/|\/home\/[A-Za-z]|[A-Z]:\\Users\\|gbrain|ai-fleet|FLEET_/,
     'skill contains a private path or internal integration dependency');
   return { name: meta.name, entryWords: entry.split(/\s+/).length, referenceBytes: Buffer.byteLength(reference) };
 }

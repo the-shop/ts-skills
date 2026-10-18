@@ -53,7 +53,7 @@ For a proposed process:
 
 Skills combine their relevant obligations into one workflow. Evidence can serve multiple skills and should appear once. The user's requested output format takes precedence over a skill's suggested presentation. Diagnosis, review, and planning have completion conditions that do not require edits.
 
-## Why two files?
+## Why an entrypoint and a reference?
 
 `SKILL.md` keeps standard [Agent Skills YAML metadata](https://agentskills.io/specification) and a compact TOON routing block. `reference.toon` holds the workflow, evidence requirements, and completion conditions in [Token-Oriented Object Notation](https://github.com/toon-format/spec). The one helper script, `ts-handoff/merge_facts.py`, does the keyed-facts merge in code because models merge superseded rules unreliably by hand.
 
