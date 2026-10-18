@@ -2,7 +2,7 @@
 
 ## What is portable
 
-The installed payload is two UTF-8 text files per skill. YAML frontmatter provides standard `name`, `description`, `license`, and string-valued `metadata`. Discovery phrases belong in `description`; there is no custom top-level `triggers` field.
+The installed payload is two UTF-8 text files per skill, except `ts-handoff`, which also ships `merge_facts.py`, a standard-library Python 3.8+ script that merges keyed handoff facts. Without Python, `ts-handoff` still applies, and a hand-merged facts block is labeled unverified. YAML frontmatter provides standard `name`, `description`, `license`, and string-valued `metadata`. Discovery phrases belong in `description`; there is no custom top-level `triggers` field.
 
 References are relative to their own skill directory. A selected skill does not depend on the other seven, a shared external reference, a particular shell, absolute machine paths, provider APIs, internal services, or a TOON runtime. Agents can use equivalent file, search, execution, and data tools available in their environment.
 
@@ -36,7 +36,7 @@ The six release installation targets are:
 
 Installation support means the files can be placed for a host. It does not mean every host/model pair was behaviorally tested. The exact executed checks are in [release evidence](validation.md).
 
-With Skills CLI 1.5.23, project-mode symlink installation for Grok, Hermes, and Pi skips the agent-specific link if the corresponding `.grok`, `.hermes`, or `.pi` project directory does not already exist. Initialize the intended host's project directory first, or install manually. Check that both skill files are readable at the final destination; the install summary alone is not sufficient evidence.
+With Skills CLI 1.5.23, project-mode symlink installation for Grok, Hermes, and Pi skips the agent-specific link if the corresponding `.grok`, `.hermes`, or `.pi` project directory does not already exist. Initialize the intended host's project directory first, or install manually. Check that every skill file is readable at the final destination; the install summary alone is not sufficient evidence.
 
 ## Install manually
 

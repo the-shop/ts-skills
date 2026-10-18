@@ -20,7 +20,7 @@ npx skills add the-shop/ts-skills --skill ts-rootcause --agent claude-code codex
 
 The [Skills CLI](https://github.com/vercel-labs/skills) supports other agents and project or global installation. Inspect its choices before replacing an existing skill with the same name. Node.js is needed for this installer, not for reading or using the skills.
 
-For manual installation, copy a complete `skills/ts-…` directory into your agent's configured skill directory. Keep `SKILL.md` and `reference.toon` together. See [compatibility and installation](docs/compatibility.md) for the distinction between format support, installation checks, and executed model tests.
+For manual installation, copy a complete `skills/ts-…` directory into your agent's configured skill directory. Keep every file in the directory together: `SKILL.md`, `reference.toon`, and for `ts-handoff` also `merge_facts.py`. See [compatibility and installation](docs/compatibility.md) for the distinction between format support, installation checks, and executed model tests.
 
 ## Choose a skill
 
@@ -55,13 +55,13 @@ Skills combine their relevant obligations into one workflow. Evidence can serve 
 
 ## Why two files?
 
-`SKILL.md` keeps standard [Agent Skills YAML metadata](https://agentskills.io/specification) and a compact TOON routing block. `reference.toon` holds the workflow, evidence requirements, and completion conditions in [Token-Oriented Object Notation](https://github.com/toon-format/spec).
+`SKILL.md` keeps standard [Agent Skills YAML metadata](https://agentskills.io/specification) and a compact TOON routing block. `reference.toon` holds the workflow, evidence requirements, and completion conditions in [Token-Oriented Object Notation](https://github.com/toon-format/spec). The one helper script, `ts-handoff/merge_facts.py`, does the keyed-facts merge in code because models merge superseded rules unreliably by hand.
 
 The model reads TOON as text; no decoder is required at runtime. Our development checks use the official decoder to catch malformed tables and truncation. This layout reduces the initial entrypoint size; it does not promise a fixed token saving or guarantee that every host loads files lazily. See [design and composition](docs/design.md).
 
 ## Validation
 
-Maintainer checks need Node.js 20 or newer:
+Maintainer checks need Node.js 20 or newer and Python 3.8 or newer:
 
 ```sh
 npm ci --ignore-scripts
