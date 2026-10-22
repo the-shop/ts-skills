@@ -6,7 +6,7 @@
   "description": "Portable engineering discipline skills with compact TOON references.",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "validate": "node scripts/validate.mjs",
